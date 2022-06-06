@@ -117,7 +117,7 @@
     <input name = "name" type="text" class="form-control <?php if(isset($errors['name'])){ echo 'is-invalid';}?>" id="name" aria-describedby="name">
       <?php
   if(isset($errors['name'])){
-    echo "<span class = 'text-danger'>".$errors['name']."</span>";
+    echo "<span class = 'text-danger'>* ".$errors['name']."</span>";
   }
 
 ?>

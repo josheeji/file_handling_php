@@ -1,9 +1,14 @@
 
 <?php
 
-$name = $address = $id = $class = $gender = "";
-$errors= [];
+validateRequest();
 
+function createStudent( $name, $address, $id, $class, $gender){
+    echo $name;
+}
+function validateRequest(){
+    $name = $address = $id = $class = $gender = "";
+$errors= [];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])){
         $errors ['name'] = "Name is required";
@@ -27,17 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         $class =   $class = test_input($_POST["class"]);
     }
-    if (empty($_POST["gender"])){
-        $errors ['gender'] = "Gender is requires";
-    }else{
-        $gender = test_input($_POST["gender"]);
-    }
+   
  
  }
  if(count($errors)){
     header("Location: addStudent.php?".http_build_query(["errors"=>$errors]));
 
  }
+ createStudent( $name, $address, $id, $class, $gender);
+}
 
 function test_input($data) {
   $data = trim($data);
