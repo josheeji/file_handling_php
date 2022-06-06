@@ -107,39 +107,70 @@
     <div class="row g-5 p-3">
       <div class="card">
         <div class="card-body">
-        <form>
+        <form action ="store.php" method = "post">
+          <?php
+  $errors=$_GET["errors"];
+?>
         
   <div class="mb-3">
     <label for="name" class="form-label"> Name</label>
-    <input type="name" class="form-control" id="name" aria-describedby="name">
+    <input name = "name" type="text" class="form-control <?php if(isset($errors['name'])){ echo 'is-invalid';}?>" id="name" aria-describedby="name">
+      <?php
+  if(isset($errors['name'])){
+    echo "<span class = 'text-danger'>".$errors['name']."</span>";
+  }
+
+?>
   </div>
   
   <div class="mb-3">
     <label for="address" class="form-label">Address</label>
-    <input type="address" class="form-control" id="address">
+    <input name="address" type="text" class="form-control <?php if(isset($errors['address'])){ echo 'is-invalid';}?>" id="address">
+    <?php
+  if(isset($errors['address'])){
+    echo "<span class = 'text-danger'>".$errors['address']."</span>";
+  }
+
+?>
   </div>
   <div class="mb-3">
     <label for="id" class="form-label">ID</label>
-    <input type="id" class="form-control" id="id" aria-describedby="id">
+    <input name= "id" type="number" class="form-control <?php if(isset($errors['id'])){ echo 'is-invalid';}?>" id="id" aria-describedby="id">
+    <?php
+  if(isset($errors['id'])){
+    echo "<span class = 'text-danger'>".$errors['id']."</span>";
+  }
+  ?>
   </div>
   <div class="mb-3">
     <label for="class" class="form-label">Class</label>
-    <input type="class" class="form-control" id="class" aria-describedby="class">
+    <input name= "class" type="text" class="form-control <?php if(isset($errors['class'])){ echo 'is-invalid';}?>" id="class" aria-describedby="class">
+    <?php
+    if(isset($errors['class'])){
+      echo "<span class = 'text-danger'>".$errors['class']."</span>";
+    }
+    ?>
   </div>
   
-  <div class="mb-3">
-    <label for="gender" class="form-label"> Gender</label>
-    <input type="gender" class="form-control" id="gender" aria-describedby="gender">
-  </div>
+  
+  Gender:
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+  Female
+  </label>
+</div>
+
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-         </div>
-      </div>
-     
-     
-    </div>
+   
   </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
