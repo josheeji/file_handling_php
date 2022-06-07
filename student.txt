@@ -1,0 +1,9 @@
+
+yashoda,achham,12,7,female
+hem,,,,female
+hem,dhn,234,34,male
+yashoda,achham,12,7,female
+khem,ktm,23,12,male
+laxmi ,bouniya,934,34,female
+kabita,achham,,23,7,female
+laxmi,achham,1234,12,female

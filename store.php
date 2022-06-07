@@ -4,7 +4,12 @@
 validateRequest();
 
 function createStudent( $name, $address, $id, $class, $gender){
-    echo $name;
+    
+    $file = fopen("student.txt",'a+');
+    $text = "\n".implode(",", $_POST);
+    fwrite($file, $text);
+    fclose($file);
+    header("Location: index.php?".http_build_query(["message"=>"Student has been created succefully."]));
 }
 function validateRequest(){
     $name = $address = $id = $class = $gender = "";
@@ -49,6 +54,8 @@ function test_input($data) {
   return $data;
 }
 ?>
+
+<?php
 
 
 

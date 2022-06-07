@@ -125,7 +125,7 @@
   
   <div class="mb-3">
     <label for="address" class="form-label">Address</label>
-    <input name="address" type="text" class="form-control <?php if(isset($errors['address'])){ echo 'is-invalid';}?>" id="address">
+    <input name="address" type="text" class="form-control <?php if(isset($errors['address'])){ echo 'is-invalid';}?>" id="address" aria-decsribedy=""address>
     <?php
   if(isset($errors['address'])){
     echo "<span class = 'text-danger'>".$errors['address']."</span>";
@@ -155,13 +155,13 @@
   
   Gender:
   <div class="form-check">
-  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1">
+  <input class="form-check-input" type="radio" name="gender" value ="male" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
     Male
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" checked>
+  <input class="form-check-input" type="radio" name="gender" value="female" id="flexRadioDefault2" checked>
   <label class="form-check-label" for="flexRadioDefault2">
   Female
   </label>

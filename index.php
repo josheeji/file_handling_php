@@ -74,7 +74,11 @@
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-    
+    <?php
+    $filename = "student.txt";
+    $file = fopen("student.txt", r);
+    $message=$_GET["message"];
+      ?>   
 <div class="container-fluid">
   <main>
     
@@ -104,7 +108,14 @@
     </header>
     
     <a href='addStudent.php' class="btn btn-primary m-3">Add Student</a>
-
+    <?php
+    if(!!$message){?>
+    <div class="alert alert-success" role="alert">
+      <?php echo $message; ?>
+      </div>
+    <?php
+    }
+    ?>
     <div class="row g-5 p-3">
       <div class="card">
         <div class="card-body">
@@ -113,29 +124,32 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">ID</th>
+                <th scope="col">Class</th>
+                <th scope="col">Gender</th>
+
               </tr>
             </thead>
             <tbody>
+              <?php
+              fgets($file);
+            while(!feof($file)) {
+  
+              $student= explode(",",fgets($file));
+              ?>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"></th>
+                <td><?php echo $student[0]; ?></td>
+                <td><?php echo $student[1]; ?></td>
+                <td><?php echo $student[2]; ?></td>
+                <td><?php echo $student[3]; ?></td>
+                <td><?php echo $student[4]; ?></td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+                <?php
+            }
+                ?>
             </tbody>
           </table>
         </div>
