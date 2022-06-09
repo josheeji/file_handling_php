@@ -3,7 +3,7 @@
 
 validateRequest();
 
-function createStudent( $name, $address, $id, $class, $gender){
+function createStudent(){
     
     $file = fopen("student.txt",'a+');
     $text = "\n".implode(",", $_POST);
@@ -41,10 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
  }
  if(count($errors)){
+     //if there is any error then the page will redirect
     header("Location: addStudent.php?".http_build_query(["errors"=>$errors]));
 
  }
- createStudent( $name, $address, $id, $class, $gender);
+ //if there is no errors
+ createStudent();
 }
 
 function test_input($data) {
@@ -55,7 +57,7 @@ function test_input($data) {
 }
 ?>
 
-<?php
+
 
 
 
