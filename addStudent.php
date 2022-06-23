@@ -9,7 +9,7 @@ include_once('header.php');
     <div class="row g-5 p-3">
       <div class="card">
         <div class="card-body">
-        <form action ="store.php" method = "post">
+        <form action ="store.php" method = "POST">
           <?php
    $errors=$_GET["errors"];
 ?>

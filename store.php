@@ -1,4 +1,3 @@
-
 <?php
 
 validateRequest();
@@ -9,6 +8,7 @@ function createStudent(){
     $text = "\n".implode(",", $_POST);
     fwrite($file, $text);
     fclose($file);
+    
     header("Location: index.php?".http_build_query(["message"=>"Student has been created succefully."]));
 }
 function validateRequest(){
@@ -42,11 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  }
  if(count($errors)){
      //if there is any error then the page will redirect
-    header("Location: addStudent.php?".http_build_query(["errors"=>$errors]));
+    header("Location: /addStudent.php?".http_build_query(["errors"=>$errors]));
 
  }
- //if there is no errors
- createStudent();
+ else{
+    //if there is no errors
+    createStudent();
+ }
+ 
+ 
 }
 
 function test_input($data) {

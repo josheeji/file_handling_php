@@ -1,5 +1,4 @@
-
-    <?php
+<?php
   include_once('header.php');
 
 ?>
@@ -31,7 +30,7 @@
             </thead>
             <tbody>
               <?php
-              fgets($file);
+            fgets($file);
             while(!feof($file)) {
   
                $student= explode(",",fgets($file));
