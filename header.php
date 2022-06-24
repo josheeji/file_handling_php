@@ -97,9 +97,15 @@
                 </a>
               </li>
               <li>
-                <a href="teachersindex.php" class="nav-link text-secondary">
+                <a href="tsindex.php" class="nav-link text-secondary">
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"></use></svg>
                   Teachers
+                </a>
+              </li>
+              <li>
+                <a href="subject.php" class="nav-link text-secondary">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"></use></svg>
+                  Subject
                 </a>
               </li>
             

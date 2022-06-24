@@ -1,3 +1,4 @@
 2,dinesh,ktm,principle,male,dinesh@gmail.com,52145
 
 3,hem,dhn,principle,male,khemraj@gmail.com,2156232565
+5,hem,dhn,assistant,male,khemraj@gmail.com,2156232565

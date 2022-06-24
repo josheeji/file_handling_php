@@ -68,7 +68,7 @@ while(!feof($file)) {
   Gender:
   <div class="form-check">
 
-  <input class="form-check-input" type="radio" value="male"<?php if ($student[4]=="male "){
+  <input class="form-check-input" type="radio" value="male"<?php if ($teacher[4]=="male "){
     echo "checked";
 }
  ?>  name="gender"  id="flexRadioDefault1">

@@ -25,6 +25,7 @@ function updateteacher(){
     fclose($file_original);
     unlink("teahcer.txt");
     rename("teacher-temp.txt","teahcer.txt");
+    die("hello world");
     header("Location: tindex.php?".http_build_query(["message"=>"teacher updated successfully."]));
 }
 function validateRequest(){
@@ -77,8 +78,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: editteacher.php?".http_build_query(["errors"=>$errors]));
 
  }
- //if there is no errors
- updateteacher();
+ else{
+    //if there is no errors
+    updateteacher();
+ }
 }
 
 function test_input($data) {
